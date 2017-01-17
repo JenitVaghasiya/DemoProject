@@ -1,0 +1,75 @@
+@model IEnumerable<DemoProject.Model.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Product Management</h2>
+
+<div id="example">
+    <div id="grid"></div>
+    @section scripts
+    {
+    <script>
+                $(document).ready(function () {
+                    var crudServiceBaseUrl = "",
+                        dataSource = new kendo.data.DataSource({
+                            transport: {
+                                read:  {
+                                    url: crudServiceBaseUrl + "/Products/list",
+                                    dataType: "json",
+                                    
+                                },
+                                update: {
+                                    url: crudServiceBaseUrl + "/Products/Update",
+                                    dataType: "json",
+                                    type: 'POST'
+                                },
+                                destroy: {
+                                    url: crudServiceBaseUrl + "/Products/Delete",
+                                    dataType: "json",
+                                    type: 'POST'
+                                },
+                                create: {
+                                    url: crudServiceBaseUrl + "/Products/Create",
+                                    dataType: "json",
+                                    type: 'POST'
+                                },
+                                parameterMap: function(options, operation) {
+                                    if (operation !== "read" && options.models) {
+                                        return {models: kendo.stringify(options.models)};
+                                    }
+                                }
+                            },
+                            batch: true,
+                            pageSize: 20,
+                            schema: {
+                                model: {
+                                    id: "productId",
+                                    fields: {
+                                        productId: { editable: false, nullable: true },
+                                        name: { validation: { required: true } },
+                                        quantity: { type: "number", validation: { min: 0, required: true } },
+                                        price: { type: "number", validation: { required: true, min: 1 } }
+                                    }
+                                }
+                            }
+                        });
+
+                    $("#grid").kendoGrid({
+                        dataSource: dataSource,
+                        pageable: true,
+                        height: 550,
+                        toolbar: ["create"],
+                        columns: [
+                            "name",
+                            { field: "price", title: "Unit Price", format: "{0:n}", width: "150px" },
+                            { field: "quantity", title: "Units In Stock", width: "150px" },
+                            { command: ["edit", "destroy"], title: "&nbsp;", width: "250px" }],
+                        editable: "inline"
+                    });
+                });
+    </script>
+        }
+</div>
