@@ -1,5 +1,5 @@
---temp-output:C:\Users\jv\Downloads\Identity.Dapper-master\src\Identity.Dapper.SqlServer\obj\Debug\netstandard1.5\
---out:C:\Users\jv\Downloads\Identity.Dapper-master\src\Identity.Dapper.SqlServer\bin\Debug\netstandard1.5\Identity.Dapper.SqlServer.dll
+--temp-output:C:\Jenit\Identity.Dapper\src\Identity.Dapper.SqlServer\obj\Debug\netstandard1.5\
+--out:C:\Jenit\Identity.Dapper\src\Identity.Dapper.SqlServer\bin\Debug\netstandard1.5\Identity.Dapper.SqlServer.dll
 --define:DEBUG
 --define:TRACE
 --define:NETSTANDARD1_5
@@ -115,8 +115,8 @@
 --reference:C:\Users\jv\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\jv\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
 --reference:C:\Users\jv\.nuget\packages\System.Xml.XmlDocument\4.0.1\ref\netstandard1.3\System.Xml.XmlDocument.dll
---reference:C:\Users\jv\Downloads\Identity.Dapper-master\src\Identity.Dapper\bin\Debug\netstandard1.5\Identity.Dapper.dll
-C:\Users\jv\Downloads\Identity.Dapper-master\src\Identity.Dapper.SqlServer\Connections\SqlServerConnectionProvider.cs
-C:\Users\jv\Downloads\Identity.Dapper-master\src\Identity.Dapper.SqlServer\Extensions\ServiceCollectionExtensions.cs
-C:\Users\jv\Downloads\Identity.Dapper-master\src\Identity.Dapper.SqlServer\Models\SqlServerConfiguration.cs
-C:\Users\jv\Downloads\Identity.Dapper-master\src\Identity.Dapper.SqlServer\Properties\AssemblyInfo.cs
+--reference:C:\Jenit\Identity.Dapper\src\Identity.Dapper\bin\Debug\netstandard1.5\Identity.Dapper.dll
+C:\Jenit\Identity.Dapper\src\Identity.Dapper.SqlServer\Connections\SqlServerConnectionProvider.cs
+C:\Jenit\Identity.Dapper\src\Identity.Dapper.SqlServer\Extensions\ServiceCollectionExtensions.cs
+C:\Jenit\Identity.Dapper\src\Identity.Dapper.SqlServer\Models\SqlServerConfiguration.cs
+C:\Jenit\Identity.Dapper\src\Identity.Dapper.SqlServer\Properties\AssemblyInfo.cs
