@@ -5,10 +5,10 @@ Add a reference on your **project.json** file to the corresponding DBMS (Eg: SQL
 ```
 "dependencies": {
     "Microsoft.NETCore.App": {
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "platform"
     },
-    "Identity.Dapper.XXX": "0.3.0-*"
+    "Identity.Dapper.SqlServer": "0.3.0-*",
   }
 ```
 
@@ -45,8 +45,3 @@ services.ConfigureDapperXXXConnectionProvider(Configuration.GetSection("DapperId
 services.AddIdentity<DapperIdentityUser, DapperIdentityRole<int>>()
         .AddDapperIdentityForXXX()
         .AddDefaultTokenProviders();
-```
-
-All **XXX** are replaced by your DBMS.
-
-Currently, only SQL Server and PostgreSQL are supported. We plan support for Oracle and MySQL when the companies release the .NET Core version for their System.Data implementation.

@@ -32,6 +32,25 @@
           "lib/netstandard1.3/Dapper.dll": {}
         }
       },
+      "Identity.Dapper.PostgreSQL/0.3.0-alpha": {
+        "type": "package",
+        "dependencies": {
+          "Identity.Dapper": "0.3.0-alpha",
+          "Microsoft.Extensions.Configuration": "1.0.0",
+          "Microsoft.Extensions.Configuration.Json": "1.0.0",
+          "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
+          "NETStandard.Library": "1.6.0",
+          "Npgsql": "3.1.5"
+        },
+        "compile": {
+          "lib/netstandard1.5/Identity.Dapper.PostgreSQL.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/Identity.Dapper.PostgreSQL.dll": {}
+        }
+      },
       "Libuv/1.9.1": {
         "type": "package",
         "dependencies": {
@@ -4542,26 +4561,6 @@
           "netstandard1.5/Identity.Dapper.dll": {}
         }
       },
-      "Identity.Dapper.PostgreSQL/0.3.0-alpha": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v1.5",
-        "dependencies": {
-          "Identity.Dapper": "0.3.0-alpha",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Json": "1.0.0",
-          "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection": "1.0.0",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
-          "NETStandard.Library": "1.6.0",
-          "Npgsql": "3.1.5"
-        },
-        "compile": {
-          "netstandard1.5/Identity.Dapper.PostgreSQL.dll": {}
-        },
-        "runtime": {
-          "netstandard1.5/Identity.Dapper.PostgreSQL.dll": {}
-        }
-      },
       "Identity.Dapper.SqlServer/0.3.0-alpha": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.5",
@@ -4600,6 +4599,16 @@
         "lib/net451/Dapper.xml",
         "lib/netstandard1.3/Dapper.dll",
         "lib/netstandard1.3/Dapper.xml"
+      ]
+    },
+    "Identity.Dapper.PostgreSQL/0.3.0-alpha": {
+      "sha512": "p5cmuQxiHdkutTreg9IHR5dfjRgnoppeJA6Q5abQO8LBCtE/jobEzpq7Hq7QvXuJMQb2T6a+ZDXGiYCyb/qlFw==",
+      "type": "package",
+      "path": "Identity.Dapper.PostgreSQL/0.3.0-alpha",
+      "files": [
+        "Identity.Dapper.PostgreSQL.0.3.0-alpha.nupkg.sha512",
+        "Identity.Dapper.PostgreSQL.nuspec",
+        "lib/netstandard1.5/Identity.Dapper.PostgreSQL.dll"
       ]
     },
     "Libuv/1.9.1": {
@@ -11467,11 +11476,6 @@
       "type": "project",
       "path": "../../src/Identity.Dapper/project.json",
       "msbuildProject": "../../src/Identity.Dapper/Identity.Dapper.xproj"
-    },
-    "Identity.Dapper.PostgreSQL/0.3.0-alpha": {
-      "type": "project",
-      "path": "../../src/Identity.Dapper.PostgreSQL/project.json",
-      "msbuildProject": "../../src/Identity.Dapper.PostgreSQL/Identity.Dapper.PostgreSQL.xproj"
     },
     "Identity.Dapper.SqlServer/0.3.0-alpha": {
       "type": "project",
