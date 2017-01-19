@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "4bbe8c7a226c185c068dcade75f77dd77e0c39f4"
+    "signature": "fb0a29b16ad489ef8d0adce0c7a4354054b7dcd1"
   },
   "compilationOptions": {
     "defines": [
@@ -30,7 +30,6 @@
           "Microsoft.Extensions.Logging.Console": "1.0.0",
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
-          "Identity.Dapper.PostgreSQL": "0.3.0-alpha",
           "Identity.Dapper.SqlServer": "0.3.0-alpha",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0"
         },
@@ -67,6 +66,24 @@
         },
         "compile": {
           "lib/netstandard1.3/Dapper.dll": {}
+        }
+      },
+      "Identity.Dapper.PostgreSQL/0.3.0-alpha": {
+        "dependencies": {
+          "Identity.Dapper": "0.3.0-alpha",
+          "Microsoft.Extensions.Configuration": "1.1.0",
+          "Microsoft.Extensions.Configuration.Json": "1.0.0",
+          "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0",
+          "NETStandard.Library": "1.6.1",
+          "Npgsql": "3.1.5"
+        },
+        "runtime": {
+          "lib/netstandard1.5/Identity.Dapper.PostgreSQL.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.5/Identity.Dapper.PostgreSQL.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/1.0.0": {
@@ -2121,24 +2138,6 @@
           "Identity.Dapper.dll": {}
         }
       },
-      "Identity.Dapper.PostgreSQL/0.3.0-alpha": {
-        "dependencies": {
-          "Identity.Dapper": "0.3.0-alpha",
-          "NETStandard.Library": "1.6.1",
-          "Microsoft.Extensions.Configuration": "1.1.0",
-          "Microsoft.Extensions.Configuration.Json": "1.0.0",
-          "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection": "1.0.0",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0",
-          "Npgsql": "3.1.5"
-        },
-        "runtime": {
-          "Identity.Dapper.PostgreSQL.dll": {}
-        },
-        "compile": {
-          "Identity.Dapper.PostgreSQL.dll": {}
-        }
-      },
       "Identity.Dapper.SqlServer/0.3.0-alpha": {
         "dependencies": {
           "Identity.Dapper": "0.3.0-alpha",
@@ -3855,6 +3854,11 @@
       "serviceable": true,
       "sha512": "sha512-noa0iPw/FLnHJl28S+tTDs3yvIiOA+XGc7MjszobMqUFxUNxN7edW46Ddy4aB2n98VE3506ezSc1TIwv2jTHog=="
     },
+    "Identity.Dapper.PostgreSQL/0.3.0-alpha": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p5cmuQxiHdkutTreg9IHR5dfjRgnoppeJA6Q5abQO8LBCtE/jobEzpq7Hq7QvXuJMQb2T6a+ZDXGiYCyb/qlFw=="
+    },
     "Microsoft.AspNetCore.Antiforgery/1.0.0": {
       "type": "package",
       "serviceable": true,
@@ -4491,11 +4495,6 @@
       "sha512": "sha512-TWZnuiJgPDAEEUfobD7njXvSVR2Toz+jvKWds6yL4oSztmKQfnWzucczjzA+6Dv1bktBdY71sZW1YN0X6m9chQ=="
     },
     "Identity.Dapper/0.3.0-alpha": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Identity.Dapper.PostgreSQL/0.3.0-alpha": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

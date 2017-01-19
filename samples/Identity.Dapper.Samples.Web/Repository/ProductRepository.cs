@@ -50,6 +50,35 @@ namespace Identity.Dapper.Samples.Web.Repository
             using (IDbConnection dbConnection = Connection)
             {
                 dbConnection.Open();
+                try
+                {
+
+                    var query = @"
+                                   SELECT * FROM dbo.Products WHERE Id = @Id
+        
+                                   SELECT * FROM dbo.Products WHERE Id = @Id
+                                ";
+
+                    dynamic ObjectDumper = new List<Product>();
+                    // return a GridReader
+                    using (var result = dbConnection.QueryMultiple(query, new { Id = 1 }))
+                    {
+                        var supplier = result.Read().Single();
+                        var products = result.Read().ToList();
+
+                        ObjectDumper.Write(supplier);
+
+                        Console.WriteLine(string.Format("Total Products {0}", products.Count));
+
+                        ObjectDumper.Write(products);
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+
+                }
                 return dbConnection.Query<Product>("SELECT * FROM Products");
             }
         }
