@@ -36,12 +36,33 @@ namespace Identity.Dapper.Samples.Web.Repository
         {
             using (IDbConnection dbConnection = Connection)
             {
-                string sQuery = "INSERT INTO Products (Name, Quantity, Price)"
-                                + " VALUES(@Name, @Quantity, @Price)";
                 dbConnection.Open();
-                dbConnection.Execute(sQuery, prod);
 
-                return dbConnection.Query<int>("SELECT IDENT_CURRENT('products')").FirstOrDefault();
+                //Individual Queries for insert and then get latest id.
+                //string sQuery = "INSERT INTO Products (Name, Quantity, Price)"
+                //                + " VALUES(@Name, @Quantity, @Price)";
+                //dbConnection.Open();
+                //dbConnection.Execute(sQuery, prod);
+                //return dbConnection.Query<int>("SELECT IDENT_CURRENT('products')").FirstOrDefault();
+
+                //all in one Queries for insert and then get latest id.
+                //string sQuery = "INSERT INTO Products (Name, Quantity, Price)"
+                //    + " VALUES(@Name, @Quantity, @Price)"
+                //    + " SELECT IDENT_CURRENT('products')";
+                //dbConnection.Open();
+
+                //return dbConnection.Query<int>(sQuery, prod).FirstOrDefault();
+
+
+                //Using Store Procedure.
+
+                var p = new DynamicParameters(new { Name = prod.name, Quantity = prod.quantity, Price = prod.price });
+                p.Add("@RESULT", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                //p.Add("@rval", dbType: DbType.Int32, direction: ParameterDirection.ReturnValue);
+
+                dbConnection.Execute("InsertProduct", p, commandType: CommandType.StoredProcedure);
+                return p.Get<int>("@RESULT");
+
             }
         }
 
@@ -50,35 +71,6 @@ namespace Identity.Dapper.Samples.Web.Repository
             using (IDbConnection dbConnection = Connection)
             {
                 dbConnection.Open();
-                try
-                {
-
-                    var query = @"
-                                   SELECT * FROM dbo.Products WHERE Id = @Id
-        
-                                   SELECT * FROM dbo.Products WHERE Id = @Id
-                                ";
-
-                    dynamic ObjectDumper = new List<Product>();
-                    // return a GridReader
-                    using (var result = dbConnection.QueryMultiple(query, new { Id = 1 }))
-                    {
-                        var supplier = result.Read().Single();
-                        var products = result.Read().ToList();
-
-                        ObjectDumper.Write(supplier);
-
-                        Console.WriteLine(string.Format("Total Products {0}", products.Count));
-
-                        ObjectDumper.Write(products);
-                    }
-
-
-                }
-                catch (Exception ex)
-                {
-
-                }
                 return dbConnection.Query<Product>("SELECT * FROM Products");
             }
         }
