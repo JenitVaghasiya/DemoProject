@@ -14,6 +14,7 @@ namespace Identity.Dapper.Entities
 
         public virtual void InitializeFromClaim(Claim claim)
         {
+            // this is for testing
             ClaimType = claim.Type;
             ClaimValue = claim.Value;
         }
