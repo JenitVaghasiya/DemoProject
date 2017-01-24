@@ -22,9 +22,9 @@ namespace DemoProject.Controllers
     public class ProductsController : Controller
     {
         private readonly IProductRepository _Repo;
-        public ProductsController(IConnectionProvider connProv)
+        public ProductsController()
         {
-            _Repo = new ProductRepository(connProv);
+            //_Repo = new ProductRepository(connProv);
             //_Repo = new ProductRepository();
         }
 
