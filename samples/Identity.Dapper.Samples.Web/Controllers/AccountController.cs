@@ -18,6 +18,7 @@ namespace Identity.Dapper.Samples.Web.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        //test comment
         private readonly UserManager<DapperIdentityUser> _userManager;
         private readonly SignInManager<DapperIdentityUser> _signInManager;
         private readonly IEmailSender _emailSender;
