@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -8,7 +6,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
-using Identity.Dapper.Samples.Web.Models;
 using Identity.Dapper.Samples.Web.Models.AccountViewModels;
 using Identity.Dapper.Samples.Web.Services;
 using Identity.Dapper.Entities;
@@ -120,7 +117,7 @@ namespace Identity.Dapper.Samples.Web.Controllers
                     //    $"Please confirm your account by clicking this link: <a href='{callbackUrl}'>link</a>");
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation(3, "User created a new account with password.");
-                    _userManager.AddToRoleAsync(user, "admin");
+                    await _userManager.AddToRoleAsync(user, "admin");
                     return RedirectToLocal(returnUrl);
                 }
                 AddErrors(result);

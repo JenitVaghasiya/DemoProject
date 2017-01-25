@@ -1,17 +1,14 @@
 ﻿{
-  "version": "0.3.0-alpha",
-
   "dependencies": {
+    "dotnet-test-xunit": "2.2.0-preview2-build1029",
+    "Identity.Dapper.SqlServer": "0.3.0-alpha",
     "Microsoft.NETCore.App": {
       "version": "1.0.0",
       "type": "platform"
     },
-    "Identity.Dapper.SqlServer": "0.3.0-alpha",
-    "xunit": "2.2.0-beta2-build3300",
-    "dotnet-test-xunit": "1.0.0-rc3-000000-00",
-    "moq.netcore": "4.4.0-beta8"
+    "moq.netcore": "4.4.0-beta8",
+    "xunit": "2.2.0-beta2-build3300"
   },
-  "testRunner": "xunit",
   "frameworks": {
     "netcoreapp1.0": {
       "imports": [
@@ -19,5 +16,7 @@
         "portable-net45+win8"
       ]
     }
-  }
+  },
+  "testRunner": "xunit",
+  "version": "0.3.0-alpha"
 }

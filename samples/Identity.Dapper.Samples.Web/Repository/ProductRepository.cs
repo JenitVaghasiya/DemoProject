@@ -15,7 +15,6 @@ namespace Identity.Dapper.Samples.Web.Repository
 {
     public class ProductRepository : IProductRepository
     {
-        private string connectionString;
         private readonly IConnectionProvider _connectionProvider;
 
         public ProductRepository(IConnectionProvider connProv)

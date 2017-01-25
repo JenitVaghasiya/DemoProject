@@ -1,18 +1,10 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using DemoProject.Model;
-using Microsoft.Extensions.Configuration;
 using DemoProject.Controllers.Interface;
 using Identity.Dapper.Samples.Web.Repository;
 using Newtonsoft.Json;
-using System.Net;
-using System.Net.Http;
-using Microsoft.AspNetCore.Authorization;
 using Identity.Dapper.Connections;
 
 namespace DemoProject.Controllers
@@ -22,9 +14,9 @@ namespace DemoProject.Controllers
     public class ProductsController : Controller
     {
         private readonly IProductRepository _Repo;
-        public ProductsController()
+        public ProductsController(IConnectionProvider connProv)
         {
-            //_Repo = new ProductRepository(connProv);
+            _Repo = new ProductRepository(connProv);
             //_Repo = new ProductRepository();
         }
 
@@ -37,9 +29,10 @@ namespace DemoProject.Controllers
 
         [Route("list")]
         [HttpGet]
-        public async Task<JsonResult> Productlist()
+        public JsonResult Productlist()
         {
-            return Json(_Repo.GetAll());
+            var objreturn = _Repo.GetAll();
+            return Json(objreturn);
         }
 
 
