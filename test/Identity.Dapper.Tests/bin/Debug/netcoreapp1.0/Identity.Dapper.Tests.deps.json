@@ -8,10 +8,10 @@
     ".NETCoreApp,Version=v1.0": {
       "Identity.Dapper.Tests/0.3.0-alpha": {
         "dependencies": {
-          "Identity.Dapper.SqlServer": "0.3.0-alpha",
-          "xunit": "2.2.0-beta2-build3300",
           "dotnet-test-xunit": "2.2.0-preview2-build1029",
-          "moq.netcore": "4.4.0-beta8"
+          "Identity.Dapper.SqlServer": "0.3.0-alpha",
+          "moq.netcore": "4.4.0-beta8",
+          "xunit": "2.2.0-beta2-build3300"
         },
         "runtime": {
           "Identity.Dapper.Tests.dll": {}

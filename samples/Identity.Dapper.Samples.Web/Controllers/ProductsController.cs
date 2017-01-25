@@ -2,10 +2,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Identity.Dapper.Samples.Web.Model;
-using Identity.Dapper.Samples.Web.Controllers.Interface;
 using Identity.Dapper.Samples.Web.Repository;
 using Newtonsoft.Json;
 using Identity.Dapper.Connections;
+using Identity.Dapper.Samples.Web.Repository.Interface;
 
 namespace Identity.Dapper.Samples.Web.Controllers
 {

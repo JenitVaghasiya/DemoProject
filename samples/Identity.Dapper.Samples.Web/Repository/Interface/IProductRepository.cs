@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Identity.Dapper.Samples.Web.Controllers.Interface
+namespace Identity.Dapper.Samples.Web.Repository.Interface
 {
     public interface IProductRepository
     {

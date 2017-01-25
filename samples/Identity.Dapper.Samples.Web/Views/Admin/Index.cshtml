@@ -1,0 +1,161 @@
+@model IEnumerable<Identity.Dapper.Samples.Web.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employee List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<style type="text/css">
+    .k-tooltip.k-invalid-msg {
+        z-index: 10000;
+    }
+</style>
+<h2>Employee List</h2>
+
+<div id="employeelist">
+    <div id="grid"></div>
+    @section scripts
+    {
+        <script>
+            var crudServiceBaseUrl = "";
+            $(document).ready(function () {
+
+                dataSource = new kendo.data.DataSource({
+                    transport: {
+                        read: {
+                            url: crudServiceBaseUrl + "/adm/emp/list",
+                            dataType: "json",
+
+                        },
+                        update: {
+                            url: crudServiceBaseUrl + "/adm/emp/Update",
+                            dataType: "json",
+                            type: 'POST'
+                        },
+                        destroy: {
+                            url: crudServiceBaseUrl + "/adm/emp/Delete",
+                            dataType: "json",
+                            type: 'POST'
+                        },
+                        create: {
+                            url: crudServiceBaseUrl + "/adm/emp/Create",
+                            dataType: "json",
+                            type: 'POST'
+                        },
+                        parameterMap: function (options, operation) {
+                            if (operation !== "read" && options.models) {
+                                return { models: kendo.stringify(options.models) };
+                            }
+                        }
+                    },
+                    batch: true,
+                    pageSize: 20,
+                    schema: {
+                        model: {
+                            id: "employeeid",
+                            fields: {
+                                employeeid: { editable: false, nullable: true },
+                                username: {
+                                    validation: {
+                                        email: true,
+                                        required: true,
+                                        usernamevalidation: function (input) {
+                                            if (input.is("[name='username']") && input.val() != "") {
+
+                                                var values = $(input.val()).serialize();
+
+                                                $.ajax({
+                                                    url: crudServiceBaseUrl + "/adm/emp/usernamevalid",
+                                                    type: "post",
+                                                    data: values,
+                                                    success: function (response) {
+                                                        if (response == false)
+                                                        {
+                                                            input.attr("data-usernamevalidation-msg", "user Name already exists.");
+                                                        }
+                                                        return response;
+                                                    },
+                                                    error: function (jqXHR, textStatus, errorThrown) {
+                                                        console.log(textStatus, errorThrown);
+                                                        return false;
+                                                    }
+
+
+                                                });
+                                            }
+
+                                            return true;
+                                        }
+                                    }
+                                },
+                                empname: { validation: { required: true } },
+                                deptname: { validation: { required: true } },
+                                mobileno: { validation: { required: true } },
+                                joiningdate: { type: "date", validation: { required: true } },
+                                relevingdate: { type: "date", nullable: true, validation: { required: false } }
+                            }
+                        }
+                    }
+                });
+
+                $("#grid").kendoGrid({
+                    dataSource: dataSource,
+                    pageable: true,
+                    height: 550,
+                    toolbar: ["create"],
+                    columns: [
+                        { field: "username", title: "User Name" },
+                         { field: "empname", title: "Employee Name" },
+                          { field: "deptname", title: "Department", width: "160px", editor: DepartmentDropDownEditor },
+                          { field: "mobileno", title: "Mobile No", width: "130px" },
+                          { field: "joiningdate", title: "Joining Date", editor: JoiningDateEditor },
+                          { field: "relevingdate", title: "Relieving Date", editor: RelevingDateEditor },
+                        { command: ["edit", "destroy"], title: "&nbsp;", width: "250px" }],
+                    editable: "inline"
+                });
+            });
+
+            function DepartmentDropDownEditor(container, options) {
+                $('<input required name="' + options.field + '"/>')
+                    .appendTo(container)
+                    .kendoDropDownList({
+                        autoBind: false,
+                        dataTextField: "text",
+                        dataValueField: "value",
+                        dataSource: {
+                            transport: {
+                                read: crudServiceBaseUrl + "/adm/emp/department"
+                            }
+                        }
+                    });
+
+                $("<span class='k-invalid-msg' data-for='" + options.field + "'></span>").appendTo(container);
+            }
+
+            function JoiningDateEditor(container, options) {
+
+                //$('<input required name="' + options.field + '"/>').kendoDatePicker();
+
+                $('<input required  name="' + options.field + '"/>')
+                    .appendTo(container)
+                    .kendoDatePicker({
+                        format: "dd,MMM yyyy"
+                    });
+
+                $("<span class='k-invalid-msg' data-for='" + options.field + "'></span>").appendTo(container);
+            }
+
+            function RelevingDateEditor(container, options) {
+
+                $('<input required name="' + options.field + '"/>')
+                     .appendTo(container)
+                     .kendoDatePicker({
+                         format: "dd,MMM yyyy"
+                     });
+
+                $("<span class='k-invalid-msg' data-for='" + options.field + "'></span>").appendTo(container);
+            }
+
+        </script>
+    }
+</div>

@@ -1,9 +1,5 @@
 <stylecopresultscache>
   <version>12</version>
-  <project key="-1637817616">
-    <configuration>
-    </configuration>
-  </project>
   <sourcecode name="IProductRepository.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2017/01/23 19:51:25.762</styleCop>
@@ -6501,4 +6497,8 @@
       </violation>
     </violations>
   </sourcecode>
+  <project key="-1637817616">
+    <configuration>
+    </configuration>
+  </project>
 </stylecopresultscache>
