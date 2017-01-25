@@ -1,4 +1,4 @@
-﻿using DemoProject.Model;
+﻿using Identity.Dapper.Samples.Web.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
 using Microsoft.Extensions.Configuration;
-using DemoProject.Controllers.Interface;
+using Identity.Dapper.Samples.Web.Controllers.Interface;
 using Identity.Dapper.Samples.Web.Models;
 using Identity.Dapper.Connections;
 

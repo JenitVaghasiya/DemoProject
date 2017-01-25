@@ -1,4 +1,4 @@
-﻿using DemoProject.Models;
+﻿using Identity.Dapper.Samples.Web.Models;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Dapper;
 using Microsoft.Extensions.Configuration;
 
-namespace DemoProject.Repository
+namespace Identity.Dapper.Samples.Web.Repository
 {
     public class UserStore : IUserStore<User>, IUserLoginStore<User>, IUserPasswordStore<User>, IUserSecurityStampStore<User>
     {

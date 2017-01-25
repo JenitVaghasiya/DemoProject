@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using DemoProject.Model;
-using DemoProject.Controllers.Interface;
+using Identity.Dapper.Samples.Web.Model;
+using Identity.Dapper.Samples.Web.Controllers.Interface;
 using Identity.Dapper.Samples.Web.Repository;
 using Newtonsoft.Json;
 using Identity.Dapper.Connections;
 
-namespace DemoProject.Controllers
+namespace Identity.Dapper.Samples.Web.Controllers
 {
     [Route("Products")]
     //[Authorize(Roles ="admin")]

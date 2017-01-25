@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1/",
-    "signature": "11f5aca031c039871ddf836f6778aa2607946ca8"
+    "signature": "af8113e8f43bebb5dd26610fabae78e94a43c626"
   },
   "compilationOptions": {
     "defines": [
@@ -60,21 +60,6 @@
         },
         "compile": {
           "lib/netstandard1.3/Dapper.dll": {}
-        }
-      },
-      "Identity.Dapper.PostgreSQL/0.3.0-alpha": {
-        "dependencies": {
-          "Identity.Dapper": "0.3.0-alpha",
-          "Microsoft.Extensions.Configuration": "1.1.0",
-          "Microsoft.Extensions.Configuration.Json": "1.0.0",
-          "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection": "1.0.0",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0",
-          "NETStandard.Library": "1.6.1",
-          "Npgsql": "3.1.5"
-        },
-        "compile": {
-          "lib/netstandard1.5/Identity.Dapper.PostgreSQL.dll": {}
         }
       },
       "Libuv/1.9.1": {
@@ -1291,38 +1276,6 @@
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Npgsql/3.1.5": {
-        "dependencies": {
-          "Microsoft.Win32.Primitives": "4.3.0",
-          "System.Collections.Concurrent": "4.3.0",
-          "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Console": "4.3.0",
-          "System.Data.Common": "4.1.0",
-          "System.Diagnostics.Contracts": "4.0.1",
-          "System.Globalization.Extensions": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Net.NameResolution": "4.3.0",
-          "System.Net.NetworkInformation": "4.1.0",
-          "System.Net.Primitives": "4.3.0",
-          "System.Net.Security": "4.3.0",
-          "System.Net.Sockets": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.InteropServices": "4.3.0",
-          "System.Runtime.InteropServices.RuntimeInformation": "4.3.0",
-          "System.Runtime.Numerics": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Thread": "4.3.0",
-          "System.Threading.Timer": "4.3.0"
-        },
-        "compile": {
-          "lib/netstandard1.3/npgsql.dll": {}
-        }
-      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -2033,36 +1986,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Net.NameResolution.dll": {}
-        }
-      },
-      "System.Net.NetworkInformation/4.1.0": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.Win32.Primitives": "4.3.0",
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Tracing": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.IO.FileSystem": "4.3.0",
-          "System.IO.FileSystem.Primitives": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Net.Primitives": "4.3.0",
-          "System.Net.Sockets": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Handles": "4.3.0",
-          "System.Runtime.InteropServices": "4.3.0",
-          "System.Security.Principal.Windows": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Overlapped": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Threading.Thread": "4.3.0",
-          "System.Threading.ThreadPool": "4.3.0",
-          "runtime.native.System": "4.3.0"
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Net.NetworkInformation.dll": {}
         }
       },
       "System.Net.Primitives/4.3.0": {
@@ -2918,21 +2841,6 @@
         },
         "runtime": {
           "lib/netstandard1.3/Dapper.dll": {}
-        }
-      },
-      "Identity.Dapper.PostgreSQL/0.3.0-alpha": {
-        "dependencies": {
-          "Identity.Dapper": "0.3.0-alpha",
-          "Microsoft.Extensions.Configuration": "1.1.0",
-          "Microsoft.Extensions.Configuration.Json": "1.0.0",
-          "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection": "1.0.0",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0",
-          "NETStandard.Library": "1.6.1",
-          "Npgsql": "3.1.5"
-        },
-        "runtime": {
-          "lib/netstandard1.5/Identity.Dapper.PostgreSQL.dll": {}
         }
       },
       "Libuv/1.9.1": {
@@ -4146,38 +4054,6 @@
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Npgsql/3.1.5": {
-        "dependencies": {
-          "Microsoft.Win32.Primitives": "4.3.0",
-          "System.Collections.Concurrent": "4.3.0",
-          "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Console": "4.3.0",
-          "System.Data.Common": "4.1.0",
-          "System.Diagnostics.Contracts": "4.0.1",
-          "System.Globalization.Extensions": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Net.NameResolution": "4.3.0",
-          "System.Net.NetworkInformation": "4.1.0",
-          "System.Net.Primitives": "4.3.0",
-          "System.Net.Security": "4.3.0",
-          "System.Net.Sockets": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.InteropServices": "4.3.0",
-          "System.Runtime.InteropServices.RuntimeInformation": "4.3.0",
-          "System.Runtime.Numerics": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Thread": "4.3.0",
-          "System.Threading.Timer": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.3/npgsql.dll": {}
-        }
-      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -4839,33 +4715,6 @@
           "System.Security.Principal.Windows": "4.3.0",
           "System.Threading": "4.3.0",
           "System.Threading.Tasks": "4.3.0",
-          "runtime.native.System": "4.3.0"
-        }
-      },
-      "System.Net.NetworkInformation/4.1.0": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.Win32.Primitives": "4.3.0",
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Tracing": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.IO.FileSystem": "4.3.0",
-          "System.IO.FileSystem.Primitives": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Net.Primitives": "4.3.0",
-          "System.Net.Sockets": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Handles": "4.3.0",
-          "System.Runtime.InteropServices": "4.3.0",
-          "System.Security.Principal.Windows": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Overlapped": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Threading.Thread": "4.3.0",
-          "System.Threading.ThreadPool": "4.3.0",
           "runtime.native.System": "4.3.0"
         }
       },
@@ -5636,11 +5485,6 @@
       "serviceable": true,
       "sha512": "sha512-noa0iPw/FLnHJl28S+tTDs3yvIiOA+XGc7MjszobMqUFxUNxN7edW46Ddy4aB2n98VE3506ezSc1TIwv2jTHog=="
     },
-    "Identity.Dapper.PostgreSQL/0.3.0-alpha": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-p5cmuQxiHdkutTreg9IHR5dfjRgnoppeJA6Q5abQO8LBCtE/jobEzpq7Hq7QvXuJMQb2T6a+ZDXGiYCyb/qlFw=="
-    },
     "Libuv/1.9.1": {
       "type": "package",
       "serviceable": true,
@@ -6121,11 +5965,6 @@
       "serviceable": true,
       "sha512": "sha512-U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw=="
     },
-    "Npgsql/3.1.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-goxdRti9awLXumRiZh7Z2Lu6DQ0v6tEz+aPNfp2OjuxKCGIZYr/KmJ/Q9X+wRyGkzi0nzAacWZC5YAd5xSW6PA=="
-    },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -6430,11 +6269,6 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-AFYl08R7MrsrEjqpQWTZWBadqXyTzNDaWpMqyxhb0d6sGhV6xMDKueuBXlLL30gz+DIRY6MpdgnHWlCh5wmq9w=="
-    },
-    "System.Net.NetworkInformation/4.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Q0rfeiW6QsiZuicGjrFA7cRr2+kXex0JIljTTxzI09GIftB8k+aNL31VsQD1sI2g31cw7UGDTgozA/FgeNSzsQ=="
     },
     "System.Net.Primitives/4.3.0": {
       "type": "package",

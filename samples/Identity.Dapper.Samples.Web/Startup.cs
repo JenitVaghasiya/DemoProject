@@ -1,5 +1,4 @@
 ﻿using Identity.Dapper.Entities;
-using Identity.Dapper.PostgreSQL;
 using Identity.Dapper.Samples.Web.Services;
 using Identity.Dapper.SqlServer;
 using Microsoft.AspNetCore.Builder;

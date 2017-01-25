@@ -1,11 +1,11 @@
-﻿using DemoProject.Model;
+﻿using Identity.Dapper.Samples.Web.Model;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DemoProject.Controllers.Interface
+namespace Identity.Dapper.Samples.Web.Controllers.Interface
 {
     public interface IProductRepository
     {

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "fb0a29b16ad489ef8d0adce0c7a4354054b7dcd1"
+    "signature": "4a01384f6977e07d0196c8e5fa9d5eb6cea5ee95"
   },
   "compilationOptions": {
     "defines": [
@@ -66,24 +66,6 @@
         },
         "compile": {
           "lib/netstandard1.3/Dapper.dll": {}
-        }
-      },
-      "Identity.Dapper.PostgreSQL/0.3.0-alpha": {
-        "dependencies": {
-          "Identity.Dapper": "0.3.0-alpha",
-          "Microsoft.Extensions.Configuration": "1.1.0",
-          "Microsoft.Extensions.Configuration.Json": "1.0.0",
-          "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection": "1.0.0",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0",
-          "NETStandard.Library": "1.6.1",
-          "Npgsql": "3.1.5"
-        },
-        "runtime": {
-          "lib/netstandard1.5/Identity.Dapper.PostgreSQL.dll": {}
-        },
-        "compile": {
-          "lib/netstandard1.5/Identity.Dapper.PostgreSQL.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/1.0.0": {
@@ -1550,41 +1532,6 @@
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Npgsql/3.1.5": {
-        "dependencies": {
-          "Microsoft.Win32.Primitives": "4.3.0",
-          "System.Collections.Concurrent": "4.3.0",
-          "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Console": "4.3.0",
-          "System.Data.Common": "4.1.0",
-          "System.Diagnostics.Contracts": "4.0.1",
-          "System.Globalization.Extensions": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Net.NameResolution": "4.3.0",
-          "System.Net.NetworkInformation": "4.1.0",
-          "System.Net.Primitives": "4.3.0",
-          "System.Net.Security": "4.3.0",
-          "System.Net.Sockets": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.InteropServices": "4.3.0",
-          "System.Runtime.InteropServices.RuntimeInformation": "4.3.0",
-          "System.Runtime.Numerics": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Thread": "4.3.0",
-          "System.Threading.Timer": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.3/npgsql.dll": {}
-        },
-        "compile": {
-          "lib/netstandard1.3/npgsql.dll": {}
-        }
-      },
       "NuGet.Common/3.5.0-beta2-1484": {
         "dependencies": {
           "NETStandard.Library": "1.6.1",
@@ -2020,50 +1967,6 @@
             "rid": "win",
             "assetType": "runtime"
           }
-        }
-      },
-      "System.Net.NetworkInformation/4.1.0": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.Win32.Primitives": "4.3.0",
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Tracing": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.IO.FileSystem": "4.3.0",
-          "System.IO.FileSystem.Primitives": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Net.Primitives": "4.3.0",
-          "System.Net.Sockets": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Handles": "4.3.0",
-          "System.Runtime.InteropServices": "4.3.0",
-          "System.Security.Principal.Windows": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Overlapped": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Threading.Thread": "4.3.0",
-          "System.Threading.ThreadPool": "4.3.0",
-          "runtime.native.System": "4.3.0"
-        },
-        "runtimeTargets": {
-          "runtimes/linux/lib/netstandard1.3/System.Net.NetworkInformation.dll": {
-            "rid": "linux",
-            "assetType": "runtime"
-          },
-          "runtimes/osx/lib/netstandard1.3/System.Net.NetworkInformation.dll": {
-            "rid": "osx",
-            "assetType": "runtime"
-          },
-          "runtimes/win/lib/netstandard1.3/System.Net.NetworkInformation.dll": {
-            "rid": "win",
-            "assetType": "runtime"
-          }
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Net.NetworkInformation.dll": {}
         }
       },
       "System.Net.WebSockets/4.0.0": {
@@ -3854,11 +3757,6 @@
       "serviceable": true,
       "sha512": "sha512-noa0iPw/FLnHJl28S+tTDs3yvIiOA+XGc7MjszobMqUFxUNxN7edW46Ddy4aB2n98VE3506ezSc1TIwv2jTHog=="
     },
-    "Identity.Dapper.PostgreSQL/0.3.0-alpha": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-p5cmuQxiHdkutTreg9IHR5dfjRgnoppeJA6Q5abQO8LBCtE/jobEzpq7Hq7QvXuJMQb2T6a+ZDXGiYCyb/qlFw=="
-    },
     "Microsoft.AspNetCore.Antiforgery/1.0.0": {
       "type": "package",
       "serviceable": true,
@@ -4329,11 +4227,6 @@
       "serviceable": true,
       "sha512": "sha512-U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw=="
     },
-    "Npgsql/3.1.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-goxdRti9awLXumRiZh7Z2Lu6DQ0v6tEz+aPNfp2OjuxKCGIZYr/KmJ/Q9X+wRyGkzi0nzAacWZC5YAd5xSW6PA=="
-    },
     "NuGet.Common/3.5.0-beta2-1484": {
       "type": "package",
       "serviceable": true,
@@ -4468,11 +4361,6 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-L9QVhk8hIEix5KNA0kW58Ha+Y1dNGqqqIhAaJkhcGCWeQzUmN0njzI7SG/XAazpMecboOdFFlH3pH/qbwXLJAg=="
-    },
-    "System.Net.NetworkInformation/4.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Q0rfeiW6QsiZuicGjrFA7cRr2+kXex0JIljTTxzI09GIftB8k+aNL31VsQD1sI2g31cw7UGDTgozA/FgeNSzsQ=="
     },
     "System.Net.WebSockets/4.0.0": {
       "type": "package",
