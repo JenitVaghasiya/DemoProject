@@ -41,14 +41,12 @@ namespace Identity.Dapper.Samples.Web.Repository
                 dbConnection.Open();
                 //Using Store Procedure.
 
-                //var p = new DynamicParameters(new { Name = prod.name, Quantity = prod.quantity, Price = prod.price });
-                //p.Add("@RESULT", dbType: DbType.Int32, direction: ParameterDirection.Output);
-                //p.Add("@rval", dbType: DbType.Int32, direction: ParameterDirection.ReturnValue);
+                var p = new DynamicParameters(new { EmpName = emp.empName, DeptName = emp.deptName, Username = emp.username, MobileNo= emp.mobileNo, JoiningDate = emp.joiningDate, RelevingDate = emp.relevingDate });
+                p.Add("@RESULT", dbType: DbType.Int32, direction: ParameterDirection.Output);
 
-                //dbConnection.Execute("InsertProduct", p, commandType: CommandType.StoredProcedure);
-                //return p.Get<int>("@RESULT");
-                return 1;
-
+                dbConnection.Execute("InsertEmployee", p, commandType: CommandType.StoredProcedure);
+                return p.Get<int>("@RESULT");
+    
             }
         }
 
@@ -88,6 +86,27 @@ namespace Identity.Dapper.Samples.Web.Repository
             return values;
         }
 
+        public int IsUserNamevalid(string eid, string username)
+        {
+            using (IDbConnection dbConnection = Connection)
+            {
+                string sQuery = string.Empty;
+                dbConnection.Open();
+                if (string.IsNullOrEmpty(eid)|| eid == "0")
+                {
+                    sQuery = "SELECT * FROM Employee" + " WHERE UserName = @Username";
+                    return dbConnection.Query<int>(sQuery, new { Username = username }).FirstOrDefault();
+                }
+                else
+                {
+                    sQuery = "SELECT * FROM Employee" + " WHERE EmployeeID <> @employeeid AND UserName = @username";
+                    return dbConnection.Query<int>(sQuery, new { employeeid = eid, Username = username }).FirstOrDefault();
+                }
+
+                
+                
+            }
+        }
         public Product GetByID(int? id)
         {
             using (IDbConnection dbConnection = Connection)
@@ -103,8 +122,8 @@ namespace Identity.Dapper.Samples.Web.Repository
         {
             using (IDbConnection dbConnection = Connection)
             {
-                string sQuery = "DELETE FROM Products"
-                             + " WHERE ProductId = @Id";
+                string sQuery = "UPDATE Employee SET IsActive = 0"
+                             + " WHERE EmployeeID = @Id";
                 dbConnection.Open();
                 dbConnection.Execute(sQuery, new { Id = id });
             }
@@ -114,11 +133,13 @@ namespace Identity.Dapper.Samples.Web.Repository
         {
             using (IDbConnection dbConnection = Connection)
             {
-                string sQuery = "UPDATE Products SET Name = @Name,"
-                               + " Quantity = @Quantity, Price= @Price"
-                               + " WHERE ProductId = @ProductId";
                 dbConnection.Open();
-                dbConnection.Query(sQuery, emp);
+                //Using Store Procedure.
+
+                var p = new DynamicParameters(new { EmployeeID = emp.employeeID, EmpName = emp.empName, DeptName = emp.deptName, Username = emp.username, MobileNo = emp.mobileNo, JoiningDate = emp.joiningDate, RelevingDate = emp.relevingDate });
+
+                dbConnection.Execute("UpdateEmployee", p, commandType: CommandType.StoredProcedure);
+
             }
         }
     }

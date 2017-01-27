@@ -46,25 +46,30 @@ namespace Identity.Dapper.Samples.Web.Controllers
 
         [Route("department")]
         [HttpGet]
-        [Authorize(Roles = "admin,user")]
-        public JsonResult DepartmentList()
+        [Authorize(Roles = "admin")]
+        public List<object> DepartmentList()
         {
             var objreturn = _Repo.GetDepartmentAll();
-            return Json(objreturn);
+            return objreturn;
         }
 
 
-        [Route("department")]
-        [HttpGet]
-        [Authorize(Roles = "admin,user")]
-        public async Task<bool> usernamevalid(string email)
+        [Route("validusername")]
+        [HttpPost]
+        [Authorize(Roles = "admin")]
+        public bool isusernamevalid(string eid, string username)
         {
-            var user = await _userManager.FindByEmailAsync(email);
-            if (user == null)
-            {
+            //var user = await _userManager.FindByEmailAsync(email);
+            int UserNameCount = _Repo.IsUserNamevalid(eid,username);
+            if (UserNameCount > 0)
+                return false;
+            else
                 return true;
-            }
-            return false;
+            //var user = await _userManager.FindByEmailAsync(email);
+            //if (user == null)
+            //{
+            //return true;
+            //}
         }
 
         [Route("Update")]
@@ -90,7 +95,7 @@ namespace Identity.Dapper.Samples.Web.Controllers
             if (ModelState.IsValid)
             {
                 DeleteEmployee = JsonConvert.DeserializeObject<List<Employee>>(models).FirstOrDefault();
-                _Repo.Delete(DeleteEmployee.EmployeeID);
+                _Repo.Delete(DeleteEmployee.employeeID);
 
             }
 
@@ -105,7 +110,7 @@ namespace Identity.Dapper.Samples.Web.Controllers
             if (ModelState.IsValid)
             {
                 AddEmployee = JsonConvert.DeserializeObject<List<Employee>>(models).FirstOrDefault();
-                AddEmployee.EmployeeID = _Repo.Add(AddEmployee);
+                AddEmployee.employeeID = _Repo.Add(AddEmployee);
             }
 
             return AddEmployee;

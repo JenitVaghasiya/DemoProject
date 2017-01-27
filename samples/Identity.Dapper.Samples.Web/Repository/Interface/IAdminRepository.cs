@@ -37,5 +37,7 @@ namespace Identity.Dapper.Samples.Web.Repository.Interface
         /// </summary>
         /// <returns></returns>
         void Update(Employee emp);
+
+        int IsUserNamevalid(string eid, string username);
     }
 }

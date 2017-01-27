@@ -3,45 +3,6 @@
   "version": 2,
   "targets": {
     ".NETCoreApp,Version=v1.0": {
-      "castle.core.netcore/3.3.4-beta8": {
-        "type": "package",
-        "dependencies": {
-          "System.AppContext": "4.0.0",
-          "System.Collections": "4.0.10",
-          "System.Collections.Specialized": "4.0.0",
-          "System.ComponentModel": "4.0.0",
-          "System.ComponentModel.TypeConverter": "4.0.0",
-          "System.Console": "4.0.0-beta-23409",
-          "System.Diagnostics.Debug": "4.0.10",
-          "System.Diagnostics.TraceSource": "4.0.0-beta-23409",
-          "System.Dynamic.Runtime": "4.0.10",
-          "System.Globalization": "4.0.10",
-          "System.IO": "4.0.10",
-          "System.IO.FileSystem": "4.0.0",
-          "System.IO.FileSystem.Primitives": "4.0.0",
-          "System.Linq": "4.0.0",
-          "System.ObjectModel": "4.0.10",
-          "System.Reflection": "4.0.10",
-          "System.Reflection.Emit": "4.0.0",
-          "System.Reflection.Emit.ILGeneration": "4.0.0",
-          "System.Reflection.Extensions": "4.0.0",
-          "System.Reflection.Primitives": "4.0.0",
-          "System.Reflection.TypeExtensions": "4.0.0",
-          "System.Resources.ResourceManager": "4.0.0",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.Extensions": "4.0.10",
-          "System.Text.Encoding": "4.0.10",
-          "System.Threading": "4.0.10",
-          "System.Xml.ReaderWriter": "4.0.10",
-          "System.Xml.XmlDocument": "4.0.0"
-        },
-        "compile": {
-          "lib/dotnet/Castle.Core.dll": {}
-        },
-        "runtime": {
-          "lib/dotnet/Castle.Core.dll": {}
-        }
-      },
       "Dapper/1.50.0": {
         "type": "package",
         "dependencies": {
@@ -1035,36 +996,6 @@
           }
         }
       },
-      "moq.netcore/4.4.0-beta8": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.0.10",
-          "System.Diagnostics.Debug": "4.0.10",
-          "System.Diagnostics.Tools": "4.0.0",
-          "System.Globalization": "4.0.10",
-          "System.Linq": "4.0.0",
-          "System.Linq.Expressions": "4.0.10",
-          "System.Linq.Queryable": "4.0.0",
-          "System.Reflection": "4.0.10",
-          "System.Reflection.Emit": "4.0.0",
-          "System.Reflection.Extensions": "4.0.0",
-          "System.Reflection.Primitives": "4.0.0",
-          "System.Reflection.TypeExtensions": "4.0.0",
-          "System.Resources.ResourceManager": "4.0.0",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.Extensions": "4.0.10",
-          "System.Text.RegularExpressions": "4.0.10",
-          "System.Threading": "4.0.10",
-          "System.Threading.Tasks": "4.0.10",
-          "castle.core.netcore": "3.3.4-beta8"
-        },
-        "compile": {
-          "lib/dotnet/Moq.dll": {}
-        },
-        "runtime": {
-          "lib/dotnet/Moq.dll": {}
-        }
-      },
       "NETStandard.Library/1.6.0": {
         "type": "package",
         "dependencies": {
@@ -1448,7 +1379,7 @@
           "System.Threading": "4.0.11"
         },
         "compile": {
-          "ref/netstandard1.3/System.Collections.Specialized.dll": {}
+          "ref/netstandard1.3/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.Specialized.dll": {}
@@ -1756,15 +1687,6 @@
         },
         "runtime": {
           "lib/portable-net45+win8+wp8+wpa81/_._": {}
-        }
-      },
-      "System.Diagnostics.TraceSource/4.0.0-beta-23409": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime": "4.0.0"
-        },
-        "compile": {
-          "ref/dotnet/System.Diagnostics.TraceSource.dll": {}
         }
       },
       "System.Diagnostics.Tracing/4.1.0": {
@@ -3471,36 +3393,8 @@
     }
   },
   "libraries": {
-    "castle.core.netcore/3.3.4-beta8": {
-      "sha512": "FyriJO1Ccj5RsqjUbHG7lJsqRT7IG6u6JgDNI4GHJQsGeGpT+1RSNvO3lzre3vZXZpbeL8iB7CO6D2t1J6RWEA==",
-      "type": "package",
-      "path": "castle.core.netcore/3.3.4-beta8",
-      "files": [
-        "ASL  Apache Software Foundation License.txt",
-        "BreakingChanges.txt",
-        "Changes.txt",
-        "LICENSE.txt",
-        "Notice.txt",
-        "castle.core.netcore.3.3.4-beta8.nupkg.sha512",
-        "castle.core.netcore.nuspec",
-        "lib/dotnet/Castle.Core.XML",
-        "lib/dotnet/Castle.Core.dll",
-        "lib/dotnet/Castle.Core.pdb",
-        "lib/net35/Castle.Core.dll",
-        "lib/net35/Castle.Core.xml",
-        "lib/net40-client/Castle.Core.dll",
-        "lib/net40-client/Castle.Core.xml",
-        "lib/net45/Castle.Core.dll",
-        "lib/net45/Castle.Core.xml",
-        "lib/sl4/Castle.Core.dll",
-        "lib/sl4/Castle.Core.xml",
-        "lib/sl5/Castle.Core.dll",
-        "lib/sl5/Castle.Core.xml",
-        "readme.txt"
-      ]
-    },
     "Dapper/1.50.0": {
-      "sha512": "noa0iPw/FLnHJl28S+tTDs3yvIiOA+XGc7MjszobMqUFxUNxN7edW46Ddy4aB2n98VE3506ezSc1TIwv2jTHog==",
+      "sha512": "pHf1WtHEvn82Y/2oB0ZavUuyxDMds+UymoZHtgEW6U2zAQLz0YfjIT8WxkWq+J5Cp7hwqFWb/0LHBMzdxyQu0A==",
       "type": "package",
       "path": "Dapper/1.50.0",
       "files": [
@@ -4352,25 +4246,6 @@
         "runtimes/win/lib/net46/Microsoft.Win32.Registry.dll",
         "runtimes/win/lib/netcore50/_._",
         "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Registry.dll"
-      ]
-    },
-    "moq.netcore/4.4.0-beta8": {
-      "sha512": "XbvVw6iySEodAQ1wwBitOMN7stFUYu+tpCluZKM6R9hR4YvS93qo8WXBC91cNwZr+ONDgdtxw6YG+OKOwwIThQ==",
-      "type": "package",
-      "path": "moq.netcore/4.4.0-beta8",
-      "files": [
-        "README.md",
-        "lib/dotnet/Moq.dll",
-        "lib/dotnet/Moq.pdb",
-        "lib/dotnet/Moq.xml",
-        "lib/net35/Moq.dll",
-        "lib/net35/Moq.xml",
-        "lib/net40/Moq.dll",
-        "lib/net40/Moq.xml",
-        "lib/sl5/Moq.Silverlight.dll",
-        "lib/sl5/Moq.Silverlight.xml",
-        "moq.netcore.4.4.0-beta8.nupkg.sha512",
-        "moq.netcore.nuspec"
       ]
     },
     "NETStandard.Library/1.6.0": {
@@ -5572,27 +5447,6 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
-      ]
-    },
-    "System.Diagnostics.TraceSource/4.0.0-beta-23409": {
-      "sha512": "43qywT02IIcP3uRoIYndSa6tTalx2VIVulk7lTN++hFCpHvne8zrD7HNuBn8AnfgDWohEkO4kFbvCpiwbOSGhg==",
-      "type": "package",
-      "path": "System.Diagnostics.TraceSource/4.0.0-beta-23409",
-      "files": [
-        "System.Diagnostics.TraceSource.4.0.0-beta-23409.nupkg.sha512",
-        "System.Diagnostics.TraceSource.nuspec",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Diagnostics.TraceSource.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/dotnet/System.Diagnostics.TraceSource.dll",
-        "ref/net46/System.Diagnostics.TraceSource.dll",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "runtime.json"
       ]
     },
     "System.Diagnostics.Tracing/4.1.0": {
@@ -9378,7 +9232,6 @@
       "Identity.Dapper.SqlServer >= 0.3.0-alpha",
       "Microsoft.NETCore.App >= 1.0.0",
       "dotnet-test-xunit >= 2.2.0-preview2-build1029",
-      "moq.netcore >= 4.4.0-beta8",
       "xunit >= 2.2.0-beta2-build3300"
     ],
     ".NETCoreApp,Version=v1.0": []

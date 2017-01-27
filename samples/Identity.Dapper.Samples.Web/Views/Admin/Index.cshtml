@@ -6,9 +6,9 @@
 
 }
 <style type="text/css">
-    .k-tooltip.k-invalid-msg {
-        z-index: 10000;
-    }
+    /*.k-tooltip.k-invalid-msg {
+            z-index: 10000;
+        }*/
 </style>
 <h2>Employee List</h2>
 
@@ -18,8 +18,36 @@
     {
         <script>
             var crudServiceBaseUrl = "";
+            var Department = [];
+            var _roleDataSource;
             $(document).ready(function () {
+                //        var brands = [
+                //{ brandId: 1, name: "Ford" },
+                //{ brandId: 2, name: "BMW" }
+                //        ];
 
+
+
+                $.ajax({
+                    url: crudServiceBaseUrl + "/adm/emp/department",
+                    dataType: "json",
+                    success: function (response) {
+
+                        for (var i = 0; i < response.length; i++) {
+                            Department.push({ id: response[i].text, title: response[i].text });
+
+                        }
+
+
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log(textStatus, errorThrown);
+                    }
+
+
+                })
+
+                var empid;
                 dataSource = new kendo.data.DataSource({
                     transport: {
                         read: {
@@ -52,47 +80,28 @@
                     pageSize: 20,
                     schema: {
                         model: {
-                            id: "employeeid",
+                            id: "employeeID",
                             fields: {
-                                employeeid: { editable: false, nullable: true },
+                                employeeID: { editable: false, nullable: true },
                                 username: {
                                     validation: {
                                         email: true,
                                         required: true,
-                                        usernamevalidation: function (input) {
-                                            if (input.is("[name='username']") && input.val() != "") {
-
-                                                var values = $(input.val()).serialize();
-
-                                                $.ajax({
-                                                    url: crudServiceBaseUrl + "/adm/emp/usernamevalid",
-                                                    type: "post",
-                                                    data: values,
-                                                    success: function (response) {
-                                                        if (response == false)
-                                                        {
-                                                            input.attr("data-usernamevalidation-msg", "user Name already exists.");
-                                                        }
-                                                        return response;
-                                                    },
-                                                    error: function (jqXHR, textStatus, errorThrown) {
-                                                        console.log(textStatus, errorThrown);
-                                                        return false;
-                                                    }
-
-
-                                                });
+                                        DisplayNameValidation: function (input) {
+                                            var exists = CheckName(input);
+                                            if (exists && input.is("[name='username']") && input.val() != "") {
+                                                input.attr("data-DisplayNameValidation-msg", "User Name already exists.");
+                                                return false;
                                             }
-
                                             return true;
                                         }
                                     }
                                 },
-                                empname: { validation: { required: true } },
-                                deptname: { validation: { required: true } },
-                                mobileno: { validation: { required: true } },
-                                joiningdate: { type: "date", validation: { required: true } },
-                                relevingdate: { type: "date", nullable: true, validation: { required: false } }
+                                empName: { validation: { required: true } },
+                                deptName: { validation: { required: true } },
+                                mobileNo: { validation: { required: true } },
+                                joiningDate: { validation: { required: true }, type: "date" },
+                                relevingDate: { type: "date", nullable: true, validation: { required: false } }
                             }
                         }
                     }
@@ -105,30 +114,56 @@
                     toolbar: ["create"],
                     columns: [
                         { field: "username", title: "User Name" },
-                         { field: "empname", title: "Employee Name" },
-                          { field: "deptname", title: "Department", width: "160px", editor: DepartmentDropDownEditor },
-                          { field: "mobileno", title: "Mobile No", width: "130px" },
-                          { field: "joiningdate", title: "Joining Date", editor: JoiningDateEditor },
-                          { field: "relevingdate", title: "Relieving Date", editor: RelevingDateEditor },
+                         { field: "empName", title: "Employee Name" },
+                          { field: "deptName", title: "Department", width: "160px", editor: DepartmentDropDownEditor },
+                          { field: "mobileNo", title: "Mobile No", width: "130px" },
+                          { field: "joiningDate", title: "Joining Date", editor: JoiningDateEditor, type: "date", template: "#= kendo.toString(kendo.parseDate(joiningDate, 'yyyy-MM-dd'), 'dd-MMM-yyyy') #" },
+                          { field: "relevingDate", title: "Relieving Date", editor: RelevingDateEditor, type: "date", template: "# if(relevingDate === null){# - #}else{# #=kendo.toString(kendo.parseDate(relevingDate, 'yyyy-MM-dd'), 'dd-MMM-yyyy')#  #}#" },
                         { command: ["edit", "destroy"], title: "&nbsp;", width: "250px" }],
                     editable: "inline"
                 });
+
+
             });
 
+            function CheckName(input) {
+
+                var currentPart = null;
+
+                ligrid = $("#grid").data("kendoGrid");
+                var lidata = ligrid.dataSource.data();
+
+                var NewUserName = "";
+                var Respo = false;
+                $.each(lidata, function (i, row) {
+
+                    if (i == 0) {
+                        NewUserName = input.val();
+                    }
+                    else {
+                        if (NewUserName.trim().toLowerCase() == row.username.trim().toLowerCase()) {
+                            Respo = true;
+                        }
+
+                    }
+                });
+                    return Respo;
+                
+            }
+
             function DepartmentDropDownEditor(container, options) {
-                $('<input required name="' + options.field + '"/>')
+
+                $('<input  data-bind="value:' + options.field + '" name="' + options.field + '" />')
+                    .attr("id", "ddl_roleTitle")
                     .appendTo(container)
                     .kendoDropDownList({
-                        autoBind: false,
-                        dataTextField: "text",
-                        dataValueField: "value",
-                        dataSource: {
-                            transport: {
-                                read: crudServiceBaseUrl + "/adm/emp/department"
-                            }
-                        }
+                        dataSource: new kendo.data.DataSource({
+                            data: Department
+                        }),
+                        dataTextField: "title",
+                        dataValueField: "title",
+                        template: "<span data-id='${data.id}'>${data.title}</span>"
                     });
-
                 $("<span class='k-invalid-msg' data-for='" + options.field + "'></span>").appendTo(container);
             }
 
@@ -147,15 +182,17 @@
 
             function RelevingDateEditor(container, options) {
 
-                $('<input required name="' + options.field + '"/>')
+                $('<input name="' + options.field + '"/>')
                      .appendTo(container)
                      .kendoDatePicker({
                          format: "dd,MMM yyyy"
                      });
 
-                $("<span class='k-invalid-msg' data-for='" + options.field + "'></span>").appendTo(container);
+                //$("<span class='k-invalid-msg' data-for='" + options.field + "'></span>").appendTo(container);
             }
 
         </script>
+
+
     }
 </div>
