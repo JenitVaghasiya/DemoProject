@@ -21,12 +21,6 @@
             var Department = [];
             var _roleDataSource;
             $(document).ready(function () {
-                //        var brands = [
-                //{ brandId: 1, name: "Ford" },
-                //{ brandId: 2, name: "BMW" }
-                //        ];
-
-
 
                 $.ajax({
                     url: crudServiceBaseUrl + "/adm/emp/department",
@@ -109,7 +103,7 @@
 
                 $("#grid").kendoGrid({
                     dataSource: dataSource,
-                    pageable: true,
+                    pageable: true, 
                     height: 550,
                     toolbar: ["create"],
                     columns: [
@@ -119,12 +113,20 @@
                           { field: "mobileNo", title: "Mobile No", width: "130px" },
                           { field: "joiningDate", title: "Joining Date", editor: JoiningDateEditor, type: "date", template: "#= kendo.toString(kendo.parseDate(joiningDate, 'yyyy-MM-dd'), 'dd-MMM-yyyy') #" },
                           { field: "relevingDate", title: "Relieving Date", editor: RelevingDateEditor, type: "date", template: "# if(relevingDate === null){# - #}else{# #=kendo.toString(kendo.parseDate(relevingDate, 'yyyy-MM-dd'), 'dd-MMM-yyyy')#  #}#" },
-                        { command: ["edit", "destroy"], title: "&nbsp;", width: "250px" }],
+                        { command: ["edit", "destroy", { text: "Review", imageClass: -"user", className: "k-custom-user", iconClass: "k-icon", click: showDetails }], title: "&nbsp;", width: "340px" }],
                     editable: "inline"
                 });
 
 
             });
+
+            function showDetails(e) {
+                e.preventDefault();
+
+                var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+                wnd.content(detailsTemplate(dataItem));
+                wnd.center().open();
+            }
 
             function CheckName(input) {
 
